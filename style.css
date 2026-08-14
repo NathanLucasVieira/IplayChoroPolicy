@@ -1,102 +1,89 @@
-:root {
-  --text: #1a1a1a;
-  --muted: #666;
-  --line: #e2e2e2;
-  --link: #1a1a1a;
-  --bg: #ffffff;
-}
-
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f7f7f7;
+  color: #222;
   line-height: 1.6;
 }
 
 .wrap {
-  max-width: 680px;
+  width: min(900px, 92%);
   margin: 0 auto;
-  padding: 48px 20px 80px;
 }
 
-header.top {
+.home {
+  min-height: 100vh;
   display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  flex-wrap: wrap;
-  gap: 8px 20px;
-  margin-bottom: 40px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid var(--line);
-}
-
-header.top .app-name {
-  font-weight: 600;
-  font-size: 1rem;
-}
-
-nav.links {
-  display: flex;
-  gap: 18px;
-  font-size: 0.9rem;
-}
-
-nav.links a {
-  color: var(--muted);
-  text-decoration: none;
-}
-
-nav.links a.current,
-nav.links a:hover {
-  color: var(--text);
-  text-decoration: underline;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px 0;
 }
 
 h1 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin: 0 0 6px;
+  margin: 0 0 10px;
+  font-size: 42px;
 }
 
-.meta {
-  color: var(--muted);
-  font-size: 0.88rem;
-  margin: 0 0 36px;
-}
-h2 {
-  font-size: 1.05rem;
-  font-weight: 600;
-  margin: 32px 0 10px;
+.home > p {
+  color: #666;
+  font-size: 18px;
+  margin-bottom: 35px;
 }
 
-p,
-ul {
-  font-size: 0.95rem;
-  color: var(--text);
-  margin: 0 0 14px;
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
 }
 
-ul {
-  padding-left: 20px;
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 25px;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 14px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-li {
-  margin-bottom: 4px;
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
 }
 
-a {
-  color: var(--link);
+.card strong {
+  font-size: 20px;
 }
 
-footer.bottom {
-  margin-top: 48px;
-  padding-top: 20px;
-  border-top: 1px solid var(--line);
-  font-size: 0.85rem;
-  color: var(--muted);
+.card span {
+  color: #666;
+  font-size: 15px;
+}
+
+footer {
+  margin-top: 50px;
+  color: #888;
+  font-size: 14px;
+}
+
+/* Responsividade para celular */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 34px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 22px;
+  }
 }
